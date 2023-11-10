@@ -74,7 +74,7 @@ func runList(ctx context.Context, dockerCli command.Cli, backend api.Service, ls
 	}
 	if lsOpts.Quiet {
 		for _, s := range stackList {
-			if filters.Contains("name") && !fileters.Match("name", s.Name) {
+			if filters.Contains("name") && !filters.Match("name", s.Name) {
 				continue
 			}
 			fmt.Fprintln(dockerCli.Out(), s.Name)
